@@ -1,38 +1,46 @@
-.App {
-  text-align: center;
+@font-face {
+	font-family: NanumBrushScript;
+	src: url("../public/fonts/NanumBrushScript-Regular.ttf");
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+* {
+	font-family: NanumBrushScript !important;
+	font-size: 24px;
+	font-weight: 800;
+	box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+.grid {
+	display: grid;
+	grid-template-columns: auto auto auto auto;
+	justify-content: center;
+	grid-gap: 0px;
+	padding: 5px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.show-grid {
+	border: 1px solid #9bba5a !important;
 }
 
-.App-link {
-  color: #61dafb;
+.cell {
+	background-color: #9bba5a;
+	padding: 10px 10px;
+	box-shadow: inset 0 0 60px rgba(48,80,0,0.3);
+	border: 1px solid #859f4d;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.snake {
+	background-color: #216723 !important;
+}
+
+.food {
+	background-image: url("../public/images/apple.png");
+	background-repeat: no-repeat;
+	background-size: 80%;
+	background-position: center;
+}
+
+.dead {
+	background-color: #666666 !important;
 }
