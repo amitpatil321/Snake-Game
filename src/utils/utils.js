@@ -32,4 +32,27 @@ const isValidMove = (currentDirection, key) => {
   return oppositeDirections[currentDirection] !== key;
 };
 
-export { getBoard, isSnakeBody, generateFood, isValidMove };
+// check if snake is bumbed to his own body
+// if snake has 2 objects with same x and y values that means 2 body cells are at one location
+const bumpedOnBody = (snake, head) =>
+  snake.filter((each) => each.x === head.x && each.y === head.y).length >= 2;
+
+// check if snake is bumbed on food
+const bumpedOnFood = (head, food) => head.x === food.x && head.y === food.y;
+
+// check if snake is bumbed on wall
+const bumpedOnWall = (head) =>
+  head.x >= CONFIG.BOARD_SIZE ||
+  head.y >= CONFIG.BOARD_SIZE ||
+  head.x < 0 ||
+  head.y < 0;
+
+export {
+  getBoard,
+  isSnakeBody,
+  generateFood,
+  isValidMove,
+  bumpedOnFood,
+  bumpedOnBody,
+  bumpedOnWall,
+};
