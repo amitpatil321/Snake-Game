@@ -1,26 +1,28 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 import CONFIG from "config/config";
-// import * as utils from "utils/utils";
+import * as utils from "utils/utils";
 
 export const gameSlice = createSlice({
   name: "game",
   initialState: {
-    isPlaying: 0,
+    isPlaying: 1,
     foodCount: 0,
     snake: CONFIG.DEFAULT_SNAKE,
-    // food: utils.generateFood(CONFIG.DEFAULT_SNAKE),
+    food: utils.generateFood(CONFIG.DEFAULT_SNAKE),
     snakeSpeed: CONFIG.GAME_SPEED,
     direction: CONFIG.DEFAULT_DIRECTION,
   },
   reducers: {
     setPlaying: (state, action) => {
-      console.log(action);
       state.isPlaying = action.payload;
+    },
+    setDirection: (state, action) => {
+      state.direction = action.payload;
     },
   },
 });
 
-export const { setPlaying } = gameSlice.actions;
+export const { setPlaying, setDirection } = gameSlice.actions;
 
 export default gameSlice.reducer;

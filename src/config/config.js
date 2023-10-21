@@ -1,5 +1,5 @@
 const config = {
-  BOARD_SIZE: 20,
+  BOARD_SIZE: 10,
   CELL_SIZE: 20,
   GAME_SPEED: 200, // milliseconds
   DEFAULT_SNAKE: [
