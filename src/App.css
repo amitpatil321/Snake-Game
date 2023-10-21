@@ -8,9 +8,31 @@
 	font-size: 24px;
 	font-weight: 800;
 	box-sizing: border-box;
-  text-align: center;
+  	text-align: center;
 }
 
+body{
+	background: radial-gradient(circle, rgba(155, 186, 90, 1) 39%, rgba(188, 204, 154, 1) 82%, rgba(189, 215, 134, 1) 100%);
+}
+
+.column {
+  float: left;
+  padding: 10px;
+}
+
+.left, .right {
+  width: 25%;
+}
+
+.middle {
+  width: 50%;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
 
 .grid {
 	display: grid;
@@ -45,4 +67,20 @@
 
 .dead {
 	background-color: #666666 !important;
+}
+
+.info{
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	animation: mymove 2s infinite;
+}
+
+.info div {
+	font-size: 40px;
+}
+
+@keyframes mymove {
+  from {color: red;}
+  to {color: blue;}
 }

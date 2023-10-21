@@ -47,6 +47,22 @@ const bumpedOnWall = (head) =>
   head.x < 0 ||
   head.y < 0;
 
+const isHighScore = (score) => {
+  const highScore =
+    window?.localStorage?.getItem(CONFIG.STORAGE_KEY) || undefined;
+  if (!highScore) {
+    window.localStorage.setItem(CONFIG.STORAGE_KEY, score);
+  } else {
+    if (score > highScore) {
+      console.log("Its high score");
+      window.localStorage.setItem(CONFIG.STORAGE_KEY, score);
+    }
+  }
+};
+
+const getHighScore = () =>
+  window?.localStorage?.getItem(CONFIG.STORAGE_KEY) || 0;
+
 export {
   getBoard,
   isSnakeBody,
@@ -55,4 +71,6 @@ export {
   bumpedOnFood,
   bumpedOnBody,
   bumpedOnWall,
+  isHighScore,
+  getHighScore,
 };

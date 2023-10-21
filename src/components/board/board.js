@@ -16,7 +16,7 @@ import {
   setGameOver,
 } from "store/gameSlice";
 
-import Cell from "components/cell";
+import Cell from "components/cell/cell";
 
 const Board = () => {
   const lastTimestampRef = useRef(0);
@@ -82,6 +82,7 @@ const Board = () => {
   const onGameOver = () => {
     dispatch(setGameOver(true));
     dispatch(setPlaying(0));
+    utils.isHighScore(score);
     // pause for a second and then restart
     setTimeout(() => {
       dispatch(restartGame());
@@ -140,15 +141,10 @@ const Board = () => {
 
   return (
     <div>
-      {console.log(snake)}
-      Score: {score} &nbsp; Speed &nbsp;: {score * CONFIG.SCORE_INCREMENT_DELTA}
-      {/* <button type="button" onClick={() => gameEngine()}>
-        Move
-      </button>
-      &nbsp; {gameOver} &nbsp;
-      <button type="button" onClick={() => dispatch(restartGame())}>
-        End
-      </button> */}
+      <div className="info">
+        {gameOver && <div>Game Over</div>}
+        {!isPlaying && <div>Press space key to start</div>}
+      </div>
       <div
         className="grid"
         style={{

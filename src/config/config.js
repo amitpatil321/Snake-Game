@@ -16,6 +16,7 @@ const config = {
     ArrowUp: "UP",
     ArrowDown: "DOWN",
   },
+  STORAGE_KEY: "snake-score",
 };
 
 export default config;
