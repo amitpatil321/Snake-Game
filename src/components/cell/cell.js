@@ -3,7 +3,6 @@ import React, { memo } from "react";
 
 import * as utils from "utils/utils";
 
-// const Cell = ({ snake, food, Xcord, Ycord, gameOver, showGrid }) => {
 const Cell = ({ snake, food, xIndex, yIndex, gameOver }) => {
   const isFoodCell = xIndex === food.x && yIndex === food.y;
   const isSnakeCell = utils.isSnakeBody(snake, { x: xIndex, y: yIndex });

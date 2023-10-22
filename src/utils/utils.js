@@ -48,15 +48,13 @@ const bumpedOnWall = (head) =>
   head.y < 0;
 
 const isHighScore = (score) => {
+  score = score ? score * CONFIG.SCORE_INCREMENT_DELTA : 0;
   const highScore =
     window?.localStorage?.getItem(CONFIG.STORAGE_KEY) || undefined;
-  if (!highScore) {
-    window.localStorage.setItem(CONFIG.STORAGE_KEY, score);
-  } else {
-    if (score > highScore) {
-      console.log("Its high score");
+  if (!highScore) window.localStorage.setItem(CONFIG.STORAGE_KEY, score);
+  else {
+    if (score > highScore)
       window.localStorage.setItem(CONFIG.STORAGE_KEY, score);
-    }
   }
 };
 

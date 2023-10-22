@@ -9,9 +9,7 @@ import {
   setDirection,
   setFood,
   incScore,
-  resetScore,
   restartGame,
-  resetSnake,
   setSnake,
   setGameOver,
 } from "store/gameSlice";
@@ -26,8 +24,6 @@ const Board = () => {
   );
   const dispatch = useDispatch();
 
-  //   const [snake, setSnake] = useState(CONFIG.DEFAULT_SNAKE);
-  //   const [food, setFood] = useState(utils.generateFood(CONFIG.DEFAULT_SNAKE));
   const [inputDir, setInputDir] = useState({ x: 0, y: 0 });
 
   // Fill 2 dimentional array with empty values

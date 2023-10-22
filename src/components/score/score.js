@@ -10,6 +10,7 @@ const Score = () => {
   const { score } = useSelector(({ gameReducer }) => gameReducer);
   // console.log(utils.getHighScore().then((Response) => Response));
   const highScore = utils.getHighScore();
+
   return (
     <div style={{ textAlign: "center" }}>
       {/* Hish Score: {utils.getHighScore()} &nbsp;Score: {score} &nbsp; Speed
