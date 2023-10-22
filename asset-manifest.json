@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Snake-Game/static/css/main.8e7d6ed0.css",
+    "main.js": "/Snake-Game/static/js/main.77832e0d.js",
+    "static/media/NanumBrushScript-Regular.ttf": "/Snake-Game/static/media/NanumBrushScript-Regular.889e08baf23739dad1f3.ttf",
+    "static/media/apple.png": "/Snake-Game/static/media/apple.67f0f1855012c85c3d82.png",
+    "index.html": "/Snake-Game/index.html",
+    "main.8e7d6ed0.css.map": "/Snake-Game/static/css/main.8e7d6ed0.css.map",
+    "main.77832e0d.js.map": "/Snake-Game/static/js/main.77832e0d.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8e7d6ed0.css",
+    "static/js/main.77832e0d.js"
+  ]
+}
